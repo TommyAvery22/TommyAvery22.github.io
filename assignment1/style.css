@@ -1,6 +1,5 @@
 body {
-    background-color: rgb(255, 184, 0)
-    
+  background-color: rgb(255, 184, 0)
   }
 
 /*Font types from google fonts*/
@@ -35,4 +34,16 @@ h1 {
   font-style: normal;
   margin: 0 auto;
   width: fit-content; /* The width of h1 is adjusted to fit the page*/
+}
+
+a {
+  font-family: "Koh Santepheap", serif;
+  font-size: large;
+  color: black;
+}
+
+.centered-image {
+  max-width: 100%; /* Image is responsive */
+  height: auto; /* Aspect ratio is maintained depending on the width */
+  margin: 0 auto;
 }
