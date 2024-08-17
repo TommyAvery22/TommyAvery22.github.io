@@ -1,8 +1,13 @@
 body {
-  background-color: rgb(255, 184, 0)
+  background-color: rgb(255, 255, 255) /* Sets background colour of site */
   }
 
-/*Font types from google fonts*/
+.centered-image, .text-container { /* Creates a container for the text so that it can be aligned left but only as far as the width of the image*/
+  max-width: 950px; /* 950px is chosen */
+  margin: 0 auto;
+}
+
+/*Font types imported from google fonts*/
 .koh-santepheap-thin {
   font-family: "Koh Santepheap", serif;
   font-weight: 100;
@@ -27,13 +32,33 @@ body {
   font-style: normal;
 }
 
+/* Text used for webpage title */
 h1 {
-  font-family: "Koh Santepheap", serif;
-  font-weight: 900;
-  font-size: 100px;
+  font-family: "Koh Santephea", serif;
+  font-size: 120px;
   font-style: normal;
-  margin: 0 auto;
-  width: fit-content; /* The width of h1 is adjusted to fit the page*/
+  text-align: center;
+}
+
+h2 {
+  font-family: "Koh Santepheap", serif;
+  font-weight: 600;
+  font-size: 25px;
+  font-style: normal;
+  margin: auto;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 22px;
+  font-style: normal;
+  padding-top: 10px;
+  text-align: left;
+}
+
+ol li {
+  font-family: Verdana, Geneva, Tahoma, sans-serif; /* Ensure consistent font family */
+  font-size: 18px; /* Ensure consistent font size */
 }
 
 a {
@@ -43,7 +68,7 @@ a {
 }
 
 .centered-image {
-  max-width: 100%; /* Image is responsive */
+  width: 100%;
   height: auto; /* Aspect ratio is maintained depending on the width */
-  margin: 0 auto;
+  display: block;
 }
