@@ -1,74 +1,69 @@
+.header-bar { /* Styling for the header bar */
+  background-color: #283618; /* Background color of header bar */
+  padding: 15px; /* Padding inside the header */
+  text-align: center; /* Center the text */
+  margin-bottom: 40px; /* Spacing between the header bar and the element vertically following that */
+}
+
 body {
-  background-color: rgb(255, 255, 255) /* Sets background colour of site */
+  background-color: rgb(255, 254, 245) /* Background colour of site */
   }
 
-.centered-image, .text-container { /* Creates a container for the text so that it can be aligned left but only as far as the width of the image*/
-  max-width: 950px; /* 950px is chosen */
-  margin: 0 auto;
+.centered-image { /* Creates a container for the text so that it can be aligned left but only as far as the width of the image*/
+  max-width: 800px; /* Width of image will not exceed 800px. The image will be 800px as long as the screen width permits */ 
+  margin: 0 auto; /* Centres the image */ 
+  height: auto; /* Aspect ratio is maintained depending on the width */
+  display: block;
 }
 
-/*Font types imported from google fonts*/
-.koh-santepheap-thin {
-  font-family: "Koh Santepheap", serif;
-  font-weight: 100;
-  font-style: normal;
+.text-container {  
+  max-width: 650px; /* Width of text will not exceed 650px which is considerably less than the width of the image */ 
+  margin: 0 auto; /* Centres the text */ 
 }
 
-.koh-santepheap-light {
-  font-family: "Koh Santepheap", serif;
-  font-weight: 300;
-  font-style: normal;
+/* ---TEXT STYLING--- */
+h1 { /* Text used for webpage title */
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 32px; /* Main heading, font size is largest of all text */ 
+  font-style: italic; /* Italicizes the heading */
+  text-align: center; 
+  color: rgb(255, 254, 245);
 }
 
-.koh-santepheap-regular {
-  font-family: "Koh Santepheap", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.koh-santepheap-bold {
-  font-family: "Koh Santepheap", serif;
-  font-weight: 700;
-  font-style: normal;
-}
-
-/* Text used for webpage title */
-h1 {
-  font-family: "Koh Santephea", serif;
-  font-size: 120px;
-  font-style: normal;
-  text-align: center;
-}
-
+/* DELETE THIS POSSIBLY */
 h2 {
   font-family: "Koh Santepheap", serif;
   font-weight: 600;
-  font-size: 25px;
+  font-size: 24px;
   font-style: normal;
   margin: auto;
 }
 
 p {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 22px;
-  font-style: normal;
-  padding-top: 10px;
-  text-align: left;
+  font-size: 20px;
+  line-height: 1.5; /* Spacing between lines ensures readability*/
+  margin: 0 0 30px 0; /* Increase in width between paragraphs for readability */
+  text-align: left; /* Text is aligned to the left but is still centred on screen */
 }
 
-ol li {
-  font-family: Verdana, Geneva, Tahoma, sans-serif; /* Ensure consistent font family */
-  font-size: 18px; /* Ensure consistent font size */
+.caption {
+  font-family: Arial, sans-serif; 
+  font-style: italic; /* Italicizes the caption */
+  font-size: 14px; 
+  padding: 5px 0 20px 0;
+  color: #4b4b4b; 
+  text-align: left; /* Centers the caption text */
+  max-width: 750px; /* The max width of the caption is slightly less than that of the image that will be above it */ 
+  margin: 0 auto;
 }
 
-a {
-  font-family: "Koh Santepheap", serif;
-  font-size: large;
-  color: black;
+ol li {  /* Ordered list */
+  font-family: Verdana, Geneva, Tahoma, sans-serif; 
+  font-size: 18px; /* Font size is smaller than paragraph */
 }
 
-.centered-image {
-  width: 100%;
-  height: auto; /* Aspect ratio is maintained depending on the width */
-  display: block;
+a { /* Styling for link */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 20px;
 }
