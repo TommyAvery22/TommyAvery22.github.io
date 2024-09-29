@@ -1,9 +1,9 @@
 :root {
     --primary-bg-color: #f4f4f4;
     --text-color: #333;
-    --main-bg-color: #e91717;
+    --main-bg-color: #0a1b3b;
     --main-text-color: #fff;
-    --main-btn-bg-color: #938989;
+    --main-btn-bg-color: #ff9100;
   }
   
   body,
@@ -24,7 +24,8 @@
     align-items: center;
     justify-content: space-between;
   }
-  
+
+
   /* Add additional styles as needed */
   
   /* Create a container for the main content */
@@ -38,6 +39,9 @@
   header {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
     padding: 10px 0;
     text-align: center;
     width: 100%;
@@ -45,7 +49,6 @@
   
   /* Navigation styling */
   nav {
-    margin-top: 20px;
     text-align: center;
   }
   
@@ -72,6 +75,7 @@
   
   .media-player video {
     max-width: 100%;
+    width: 1000px; /* Width will adjust based on screen width*/ 
   }
   
   .custom-controls {
@@ -97,7 +101,7 @@
   .progress-bar {
     width: 100%;
     height: 10px;
-    background-color: #ddd;
+    background-color: #df1919;
     margin-top: 10px;
     overflow: hidden;
   }
@@ -107,13 +111,15 @@
     height: 100%;
     background-color: var(--main-bg-color);
     width: 0;
-    transition: width 0.1s ease;
+    transition: width 0.3s ease;
   }
   
   /* Footer styling */
   footer {
     background-color: var(--main-bg-color);
     color: var(--main-text-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small; /* Font made smaller */
     text-align: center;
     padding: 10px 0;
     width: 100%;
