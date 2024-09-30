@@ -1,9 +1,9 @@
 :root {
-    --primary-bg-color: #f4f4f4;
-    --text-color: #333;
-    --main-bg-color: #0a1b3b;
+    --primary-bg-color: #0f0e0e;
+    --text-color: #fff;
+    --main-bg-color: #33051a;
     --main-text-color: #fff;
-    --main-btn-bg-color: #ff9100;
+    --main-btn-bg-color: #fff;
   }
   
   body,
@@ -12,6 +12,12 @@
   ul {
     margin: 0;
     padding: 0;
+  }
+
+  h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 30px;
   }
   
   body {
@@ -80,11 +86,10 @@
   
   .custom-controls {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    gap: 1rem;
-    margin-top: 10px;
+    justify-content: space-between;
     width: 100%;
+    margin: 10px 0 10px ;
   }
   
   .custom-controls button {
@@ -97,11 +102,21 @@
     display: flex;
     align-items: center;
   }
+
+  .controls-left { /* Seperates the media players controls and places them to the left */
+    display: flex;
+    gap: 1rem; /* Space between the play, rewind, and fast-forward buttons */
+  }
   
+  .progress-container { /* Seperates progress bar and places it in the middle, or to the right of the media players controls*/
+    flex-grow: 1; /* Let the progress bar take up the remaining space */
+    margin: 0 1rem; /* Add spacing between the controls and progress bar */
+  }
+
   .progress-bar {
     width: 100%;
     height: 10px;
-    background-color: #df1919;
+    background-color: #534f4f;
     margin-top: 10px;
     overflow: hidden;
   }
@@ -109,9 +124,13 @@
   .progress-bar span {
     display: block;
     height: 100%;
-    background-color: var(--main-bg-color);
+    background-color: red;
     width: 0;
     transition: width 0.3s ease;
+  }
+
+  .controls-right { /* Seperates the fullscreen control and places it to the right of the progress bar */
+    display: flex;
   }
   
   /* Footer styling */
