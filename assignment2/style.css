@@ -1,7 +1,7 @@
 :root {
     --primary-bg-color: #0f0e0e;
     --text-color: #fff;
-    --main-bg-color: #33051a;
+    --main-bg-color: #1f0510;
     --main-text-color: #fff;
     --main-btn-bg-color: #fff;
   }
@@ -31,9 +31,6 @@
     justify-content: space-between;
   }
 
-
-  /* Add additional styles as needed */
-  
   /* Create a container for the main content */
   .container {
     max-width: 1000px;

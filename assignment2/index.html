@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Art-torials | Tutorials for arts and crafts</title>
+    <title>Art-torials | Tutorials for arts and crafts</title> <!--Title of webpage in browser-->
     <!-- add the font family of your choice -->
-    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="reset.css" /> 
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
   </head>
@@ -17,18 +17,18 @@
 
     <!-- Main Content Section -->
     <main class="container">
-      <h2>How to make a paper windmill</h2>
+      <h2>How to make a paper windmill</h2> <!--Title of video-->
       <!-- Media Player Section -->
       <div class="media-player">
-        <video id="custom-video-player" controls>
-          <source
-            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/berry-bunch_handheld-windmill-fan.mp4"
+        <video id="custom-video-player" controls> <!--Links video to webpage-->
+          <source 
+            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/berry-bunch_handheld-windmill-fan.mp4" 
             type="video/mp4"
           />
         </video>
 
         <div class="custom-controls">
-          <div class="controls-left">
+          <div class="controls-left"> <!--Class of controls that will appear to the left of the progress bar-->
 
             <button id="play-pause-button" onclick="togglePlayPause()">
               <img
@@ -91,16 +91,16 @@
             </button>
           </div>
         
-          <div class="progress-container">
+          <div class="progress-container"> <!--Progress bar will be inbetween the left controls and hte fullscreen control-->
             <div class="progress-bar">
               <span id="progress-bar-fill"></span>
             </div>
           </div>
         
-          <div class="controls-right">
+          <div class="controls-right"> <!--Fullscreen added so users can get a bigger view of the video which makes sense for a tutorial-->
             <button id="fullscreen-button" onclick="toggleFullscreen()"> <!-- Positioning of buttons are following standard video player layouts (e.g. YouTube) - In other words, pause/play button to the left of the progress bar, fullscreen button to the right -->
               <img
-                id="fullscreen-img"
+                id="fullscreen-img" 
                 src="https://img.icons8.com/ios-glyphs/30/full-screen--v1.png"
                 alt="Fullscreen Button"
                 width="20"

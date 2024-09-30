@@ -21,14 +21,14 @@ function togglePlayPause() { // Toggles between play and pause states of the vid
   }
 }
 
-function startSkip() {
-  myVideo.currentTime = 0;
-}
+// Being a tutorial, users would want to be able to control the video time in the case of a mistake
+function startSkip() { // Takes video back to the start
+  myVideo.currentTime = 0; // The function makes the current time equal to 0 (i.e. the start)
+} 
 
 function endSkip() { // Skips video to end
   myVideo.currentTime = myVideo.duration;
 }
-
 
 function rewindVideo() { // Rewinds the video by 5 seconds
   myVideo.currentTime = Math.max(0, myVideo.currentTime - 5); // Ensure current time doesn't go below 0
@@ -38,7 +38,7 @@ function fastForwardVideo() { // Fast forwards the video by 5 seconds
   myVideo.currentTime = Math.min(myVideo.duration, myVideo.currentTime + 5); // Ensure current time doesn't exceed video duration
 }
 
-
+// Users may want to mute the video and just follow along visually
 function toggleMuteUnmute() { // Toggles mute and unmute state of the video
   if (myVideo.muted) {
     myVideo.muted = false; // Unmute the video
@@ -49,6 +49,7 @@ function toggleMuteUnmute() { // Toggles mute and unmute state of the video
   }
 }
 
+// Users may want to watch with at fullscreen to get a better view of the instructors actions
 function toggleFullscreen() { // Toggles fullscreen mode for the video
   if (!document.fullscreenElement) {
     myVideo.requestFullscreen(); // Request to enter fullscreen
