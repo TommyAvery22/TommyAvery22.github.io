@@ -1,17 +1,10 @@
 const myVideo = document.querySelector("#custom-video-player"); // #custom-video-player corrected
-//console.log(myVideo);
-
 const playPauseButton = document.querySelector("#play-pause-btn");
-//console.log(playPauseButton);
-
 const playPauseImg = document.querySelector("#play-pause-img");
-//console.log(playPauseImg);
-
 const fullscreenButton = document.querySelector("#fullscreen-btn");
 const fullscreenImg = document.querySelector("#fullscreen-img");
 
-let progressBar = document.querySelector("#progress-bar"); // Is this let?
-console.log(progressBar);
+let progressBarFill = document.querySelector("#progress-bar-fill"); 
 
 // Event listener for the video ending
 myVideo.addEventListener("ended", function() {
@@ -29,16 +22,23 @@ function togglePlayPause() {
   }
 }
 
+// fullscreen function
 function toggleFullscreen() {
-        myVideo.requestFullscreen();
-    
+  if(!document.fullscreenElement) {
+    myVideo.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
 }
 
 // Add event listener to the play/pause button
 
-myVideo.addEventListener('timeupdate', function(){
-    progressBar.value = video.currentTime / video.duration;
+// Progress bar updates as video plays
+myVideo.addEventListener('timeupdate', function() {
+  const percentage = (video.currentTime / video.duration) * 100; // Creates a const for the percentage of the video
+    progressBarFill.style.width = percentage + "%"; // Update the width of the progress bar fill
 });
+
 // When video is playing, progress bar
 
-// fullscreen
+
