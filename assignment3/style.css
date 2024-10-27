@@ -1,0 +1,68 @@
+:root {
+    --primary-bg-color: #ffffff;
+    --text-color: #000000;
+    --main-bg-color: #fdf0d8;
+    --main-text-color: #141414;
+    --main-btn-bg-color: #fff;
+  }
+
+  body,
+  h1,
+  h2,
+  p {
+    color: var(--text-color);
+  }
+
+/* Header styling */
+header {
+    color: var(--main-text-color);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bolder;
+    font-size: 24px;
+    padding: 10px 0;
+    margin-bottom: 100px;
+    letter-spacing: 15px;
+    text-align: center;
+    width: 100%;
+  }
+
+.text-container {  
+  max-width: 900px; /* Width of text will not exceed 650px which is considerably less than the width of the image */ 
+  margin: 0 auto; /* Centres the text */ 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--main-bg-color);
+    
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bolder;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+li {
+    lin
+}
+
+.centered-image { /* Creates a container for the text so that it can be aligned left but only as far as the width of the image*/
+    max-width: 700px; /* Width of image will not exceed 1000px. The image will be 800px as long as the screen width permits */ 
+    width: 100%; /* Width of image will always fit the width of the webpage in the case of a narrower screen width */ 
+    margin: 0 auto; /* Centres the image */ 
+    display: block;
+  }
+
+button#reset {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
