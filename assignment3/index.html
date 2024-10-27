@@ -4,31 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Versatile Pizza recipe</title>
+    <title>Coal Oven Pizzeria</title>
     
     <link rel="stylesheet" href="reset.css" /> 
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&family=Rock+Salt&display=swap" rel="stylesheet">
     
 </head>
 <body>
-    <header>RECIPEVILLE</header>
+    <header>COAL OVEN PIZZERIA</header>
 
-    <h1>VERSATILE PIZZA</h1>
-    <h2>30 min</h2>
+    <div class="pizza-title">
+        <h1>the 'you' pizza</h1>
+    </div>
 
-    <h1>DIRECTIONS</h1>
-    <li>Preheat the Oven: Preheat your oven to 245°C. Place a pizza stone or baking sheet in the oven to heat if you have one; this helps the crust get extra crispy.</li>
+    <h2>size</h2>
+    <div class="button-container">
+        <div class="size-button twelve selected" onclick="selectSize(this)" data-price="7.95">12"</div>
+        <div class="size-button fourteen" onclick="selectSize(this)" data-price="10.95">14"</div>
+        <div class="size-button sixteen" onclick="selectSize(this)" data-price="13.95">16"</div>
+        <div class="size-button eighteen" onclick="selectSize(this)" data-price="15.95">18"</div>
+    </div>
 
-    <img
-        src="ingredients/PizzaDough.png"
-        alt="Pizza Dough"
-        class="centered-image"
-      />
+    <div id="price-display" class="price">
+        $<span id="price"></span>
+    </div>
+
+    <h2>toppings</h2>
+    <p>Build your pizza by dragging and dropping toppings</p>
+    <div id="pizza-area">
+        <div id="topping-thumbnails">
+            <div class="topping-item">
+                <img src="ingredients/pizzasauce-thumbnail.png" 
+                     draggable="true" 
+                     ondragstart="drag(event)" 
+                     data-overlay="toppings/pizzasauce-overlay.png" 
+                     data-price="1" 
+                     alt="Pizza Sauce" 
+                     title="Pizza Sauce">
+                <div class="topping-price">$1</div>
+            </div>
+            <div class="topping-item">
+                <img src="ingredients/pepperoni-thumbnail.png" 
+                     draggable="true" 
+                     ondragstart="drag(event)" 
+                     data-overlay="toppings/pepperoni-overlay.png" 
+                     data-price="1.50" 
+                     alt="Pepperoni" 
+                     title="Pepperoni">
+                <div class="topping-price">$1.50</div>
+            </div>
+            <div class="topping-item">
+                <img src="ingredients/ham-thumbnail.png" 
+                     draggable="true" 
+                     ondragstart="drag(event)" 
+                     data-overlay="toppings/ham-overlay.png" 
+                     data-price="2" 
+                     alt="Ham" 
+                     title="Ham">
+                <div class="topping-price">$2</div>
+            </div>
+            <div class="topping-item">
+                <img src="ingredients/pineapple-thumbnail.png" 
+                     draggable="true" 
+                     ondragstart="drag(event)" 
+                     data-overlay="toppings/pineapple-overlay.png" 
+                     data-price="1" 
+                     alt="Pineapple" 
+                     title="Pineapple">
+                <div class="topping-price">$1</div>
+            </div>
+            <div class="topping-item">
+                <img src="ingredients/mozzarella-thumbnail.png" 
+                     draggable="true" 
+                     ondragstart="drag(event)" 
+                     data-overlay="toppings/mozzarella-overlay.png" 
+                     data-price="3.50" 
+                     alt="Mozzarella" 
+                     title="Mozzarella">
+                <div class="topping-price">$3.50</div>
+            </div>
+            <div class="topping-item">
+                <img src="ingredients/olives-thumbnail.png" 
+                     draggable="true" 
+                     ondragstart="drag(event)" 
+                     data-overlay="toppings/olives-overlay.png" 
+                     data-price="1.50" 
+                     alt="Olives" 
+                     title="Olives">
+                <div class="topping-price">$1.50</div>
+            </div>
+            <div class="topping-item">
+                <img src="ingredients/mushroom-thumbnail.png" 
+                     draggable="true" 
+                     ondragstart="drag(event)" 
+                     data-overlay="toppings/mushroom-overlay.png" 
+                     data-price="1.50" 
+                     alt="Mushroom" 
+                     title="Mushroom">
+                <div class="topping-price">$1.50</div>
+            </div>
+        </div>
+        <div id="pizza-dough" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img src="toppings/pizzadough.png" alt="Pizza Dough">
+            <div id="overlay-container"></div>
+        </div>
+    </div>
 
     
+    <!-- Total price including toppings -->
+    <div id="topping-price-display" class="price">
+        $<span id="total-with-toppings"></span>
+    </div>
+ 
+    <div class="button-container">
+        <button id="reset-button" onclick="resetPizza()"><img src="trash.png" alt="Reset" class="button-icon"></button>
+        <button id="checkout-button" onclick="showCheckout()"><img src="checkout.png" alt="Checkout" class="button-icon"></button>
+    </div>
 
+    <!-- Modal for Final Price Popup -->
+    <div id="checkout-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeCheckout()">&times;</span>
+            <h2>Checkout</h2>
+            <p>$<span id="final-price"></span></p>
+        </div>
+    </div>
     
 </body>
 </html>

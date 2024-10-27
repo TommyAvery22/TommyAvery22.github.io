@@ -7,7 +7,7 @@
 
 footer {
   padding: 120px;
-}
+} 
 
 body {
   background-color: rgb(255, 254, 245) /* Background colour of site */
@@ -42,6 +42,7 @@ p {
   margin: 0 0 40px 0; /* Increase in width between paragraphs for readability */
   text-align: left; /* Text is aligned to the left but is still centred on screen */
 }
+
 
 .caption {
   font-family: Arial, sans-serif; 
