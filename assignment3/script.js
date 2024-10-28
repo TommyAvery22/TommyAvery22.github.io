@@ -1,4 +1,4 @@
-let totalToppingPrice = 0; // Track the total price of toppings
+let totalToppingPrice = 0; // Track the total price of added toppings
 let basePrice = 0; // Track the base price of the selected pizza size
 
 // Allow the element to be a drop target
@@ -79,11 +79,11 @@ function resetPizza() {
 function showCheckout() {
   const finalPrice = basePrice + totalToppingPrice;
   document.getElementById("final-price").textContent = finalPrice.toFixed(2);
-  document.getElementById("checkout-modal").style.display = "block";
+  document.getElementById("checkout-modal").style.display = "block"; // Show modal
 }
 
 // Close the checkout modal
 function closeCheckout() {
-  document.getElementById("checkout-modal").style.display = "none";
+  document.getElementById("checkout-modal").style.display = "none"; // Hide modal
 }
 

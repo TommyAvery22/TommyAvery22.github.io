@@ -1,4 +1,4 @@
-:root {
+:root { /* Establish webpages colours */
     --text-color: #141414;
     --main-bg-color: #FAF3E0;
     --main-text-color: #141414;
@@ -6,9 +6,10 @@
   }
 
 body {  
-  background-color: var(--main-bg-color);
+  background-color: var(--main-bg-color); /* Background colour was chosen to mimic a restaurant menu */
 }
 
+/* Text styling */
 body,
 h1,
 h2,
@@ -53,8 +54,7 @@ p {
   font-weight: bold; 
 }
 
-/* Styling for the base size price display */
-.price {
+.price { /* Styling for the base size price display */
   color: var(--main-text-color); 
   margin: 10px 0; /* Spacing above and below */
   font-family: "Roboto", sans-serif;
@@ -62,10 +62,9 @@ p {
   font-weight: 400;
 }
 
-/* Styling for the total price including toppings */
-.total-price-display {
-  font-size: 1.5rem;
-  font-weight: bold;
+.total-price-display { /* Styling for the total price including toppings */
+  font-size: 1.5rem; 
+  font-weight: bold; /* This was made to be bold and larger -as opposed to the pizza base price- because it has a higher heirarchal importance, being the final price of the whole pizza */
   margin-top: 20px;
   color: var(--main-text-color);
   text-align: center;
@@ -86,17 +85,17 @@ p {
   font-weight: bolder;
 }
 
-.size-button:hover { /* Change styling on hover */
+.size-button:hover { /* Change styling when cursor is hovering */
   background-color: #7b967c; 
   color: var(--btn-interact-text-color);
 }
 
-.size-button.selected { /* Change styling on click */
+.size-button.selected { /* Change styling when clicked */
   background-color: #b93742; 
   color: var(--btn-interact-text-color);
 }
 
-.size-button.twelve {
+.size-button.twelve { /* All buttons are scaled correctly from each other, giving users a visualisation of the size differences of each of the pizzas */
   --size: 86px;
 }
 
@@ -114,16 +113,16 @@ p {
 
 /* Trash/Checkout buttons */
 .price-container {
-  display: flex;              /* Use Flexbox for layout */
-  justify-content: space-between;  /* Distribute space between items */
-  align-items: center;       /* Center items vertically */
-  margin: 20px;             /* Add some margin if needed */
+  display: flex;              
+  justify-content: space-between; /* Distribute space between items */
+  align-items: center; /* Center items vertically */
+  margin: 20px;            
 }
 
 .total-price {
-  font-size: 24px;          /* Adjust font size for the total price */
-  font-weight: bold;        /* Make the total price bold */
-  margin: 0 20px;          /* Add margin on sides if needed */
+  font-size: 24px; /* Adjust font size for the total price */
+  font-weight: bold; /* Make the total price bold */
+  margin: 0 20px;          
 }
 
 .button-container {
@@ -144,99 +143,27 @@ p {
   height: 20px; /* Maintain aspect ratio */
 }
 
-.centered-image { /* Creates a container for the text so that it can be aligned left but only as far as the width of the image*/
-  max-width: 700px; /* Width of image will not exceed 1000px. The image will be 800px as long as the screen width permits */ 
-  width: 100%; /* Width of image will always fit the width of the webpage in the case of a narrower screen width */ 
-  margin: 0 auto; /* Centres the image */ 
+.centered-image { 
+  max-width: 700px; 
+  width: 100%; 
+  margin: 0 auto; /* Centres the pizza dough */ 
   display: block;
 }
 
 .topping-item {
-  text-align: center; /* Center align text under the thumbnail */
+  text-align: center; /* Center align price under the thumbnail */
 }
 
 .topping-price {
   margin-top: 5px; /* Space between image and price */
   font-size: smaller;
-  font-weight: bold; /* Emphasize the price */
-}
-
-#reset-button {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #b11a1a;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-/*DRAG/DROP*/
-/* Style for the thumbnail container */
-#topping-thumbnails {
-  display: flex;
-  gap: 10px; /* Space between thumbnails */
-  margin-bottom: 20px; /* Space below thumbnails */
-  justify-content: center; 
-}
-
-/* Style for each thumbnail image */
-#topping-thumbnails img {
-  height: 60px; /* Small size for thumbnails */
-  cursor: pointer; /* Change cursor on hover */
-}
-
-/* Optional: Centering and spacing for the entire pizza area */
-#pizza-area {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-/* Styles for the pizza dough container */
-#pizza-dough {
-  position: relative;
-  max-width: 700px; /* Adjust width to fit the display */
-  margin: 20px auto;
-}
-
-#pizza-dough img {
-  width: 100%;
-  height: auto;
-}
-
-#overlay-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-weight: bold; /* Emphasise the price */
 }
 
 .overlay-topping {
   position: absolute;
   width: 50px; /* Adjust size to fit well on the dough */
-  height: 50px;
   pointer-events: none; /* Prevent interaction once dropped */
-}
-
-#checkout-button {
-  display: block;
-  margin: 20px auto;
-  padding: 10px 20px;
-  background-color: #085f2c;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
 }
 
 .topping-overlay {
@@ -248,12 +175,9 @@ p {
 .modal {
   display: none; /* Hidden by default */
   position: fixed;
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
   width: 100%; /* Full width */
   height: 100%; /* Full height */
-  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  background-color: rgba(0, 0, 0, 0.5); /* Puts extra focus on the box and seperates it from the page behind */
 }
 
 .modal-content {
@@ -279,4 +203,69 @@ p {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+#reset-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #b11a1a;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+#topping-thumbnails { /* Style for the topping container */
+  display: flex;
+  gap: 10px; /* Space between thumbnails */
+  justify-content: center; 
+}
+
+#topping-thumbnails img { /* Style for each topping thumbnail */
+  height: 60px; /* Small size for thumbnails */
+  cursor: pointer; /* Change cursor on hover */
+}
+
+#pizza-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pizza-dough { /* Styles for the pizza dough container */
+  position: relative;
+  max-width: 700px; /* Adjust width to fit the display */
+  margin: 20px auto;
+}
+
+#pizza-dough img {
+  width: 100%;
+  height: auto;
+}
+
+#overlay-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#checkout-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #085f2c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
 }

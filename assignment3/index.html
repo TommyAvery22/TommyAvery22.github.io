@@ -13,7 +13,7 @@
     <!-- Connecting google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&family=Rock+Salt&display=swap" rel="stylesheet"> <!-- This font was chosen because its 'handrawn' look fits the menu theme -->
     <link href="https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+Salt&display=swap" rel="stylesheet">
     
 </head>
@@ -25,24 +25,24 @@
     </div>
 
     <h2>Size</h2>
-    <div class="button-container">
+    <div class="button-container"> <!-- Buttons for pizza size, each size has been assigned a price -->
         <div class="size-button twelve selected" onclick="selectSize(this)" data-price="7.95">12"</div>
         <div class="size-button fourteen" onclick="selectSize(this)" data-price="10.95">14"</div>
         <div class="size-button sixteen" onclick="selectSize(this)" data-price="13.95">16"</div>
         <div class="size-button eighteen" onclick="selectSize(this)" data-price="15.95">18"</div>
     </div>
 
-    <div id="price-display" class="price">
+    <div id="price-display" class="price"> <!-- Price of pizza size/base. This is just the price of the size itself and does not change when toppings are added -->
         $<span id="price"></span>
     </div>
 
     <h2>Toppings</h2>
-    <p>Build your pizza by dragging and dropping toppings</p>
+    <p>Build your pizza by dragging and dropping toppings</p> 
     <div id="pizza-area">
-        <div id="topping-thumbnails">
-            <div class="topping-item">
+        <div id="topping-thumbnails"> <!-- Thumbnails have been placed in the order they are most likely to be placed on the pizza (e.g. pizza sauce first, basil last) -->
+            <div class="topping-item"> <!-- Each thumbnail is draggable, and has been assigned a price. When the cursor is hovered over the thumbnail, the name of the price is shown -->
                 <img src="ingredients/pizzasauce-thumbnail.png" 
-                     draggable="true" 
+                     draggable="true"  
                      ondragstart="drag(event)" 
                      data-overlay="toppings/pizzasauce-overlay.png" 
                      data-price="1" 
@@ -61,6 +61,16 @@
                 <div class="topping-price">$1.50</div>
             </div>
             <div class="topping-item">
+                <img src="ingredients/meatball-thumbnail.png" 
+                     draggable="true" 
+                     ondragstart="drag(event)" 
+                     data-overlay="toppings/meatball-overlay.png" 
+                     data-price="3" 
+                     alt="Meatballs" 
+                     title="Meatballs">
+                <div class="topping-price">$3</div>
+            </div>
+            <div class="topping-item">
                 <img src="ingredients/ham-thumbnail.png" 
                      draggable="true" 
                      ondragstart="drag(event)" 
@@ -69,6 +79,16 @@
                      alt="Ham" 
                      title="Ham">
                 <div class="topping-price">$2</div>
+            </div>
+            <div class="topping-item">
+                <img src="ingredients/mozzarella-thumbnail.png" 
+                     draggable="true" 
+                     ondragstart="drag(event)" 
+                     data-overlay="toppings/mozzarella-overlay.png" 
+                     data-price="3.50" 
+                     alt="Mozzarella" 
+                     title="Mozzarella">
+                <div class="topping-price">$3.50</div>
             </div>
             <div class="topping-item">
                 <img src="ingredients/pineapple-thumbnail.png" 
@@ -81,14 +101,14 @@
                 <div class="topping-price">$1</div>
             </div>
             <div class="topping-item">
-                <img src="ingredients/mozzarella-thumbnail.png" 
+                <img src="ingredients/cherrytomato-thumbnail.png" 
                      draggable="true" 
                      ondragstart="drag(event)" 
-                     data-overlay="toppings/mozzarella-overlay.png" 
-                     data-price="3.50" 
-                     alt="Mozzarella" 
-                     title="Mozzarella">
-                <div class="topping-price">$3.50</div>
+                     data-overlay="toppings/cherrytomato-overlay.png" 
+                     data-price="1" 
+                     alt="Cherry Tomatoes" 
+                     title="Cherry Tomatoes">
+                <div class="topping-price">$1</div>
             </div>
             <div class="topping-item">
                 <img src="ingredients/olives-thumbnail.png" 
@@ -139,22 +159,22 @@
 
     
     <!-- Total price including toppings -->
-    <div class="price-container">
-        <button id="reset-button" onclick="resetPizza()">
+    <div class="price-container"> 
+        <button id="reset-button" onclick="resetPizza()"> <!-- Trash button, when clicked will remove all the toppings. The price will then be reset back to the price of the pizza base -->
             <img src="trash.png" alt="Reset" class="button-icon">
         </button>
         
-        <div id="topping-price-display" class="total-price">
+        <div id="topping-price-display" class="total-price"> <!-- Total price of the base with toppings is shown. This was placed directly under the dough so users can easily see the final price in real time -->
             $<span id="total-with-toppings"></span>
         </div>
         
-        <button id="checkout-button" onclick="showCheckout()">
+        <button id="checkout-button" onclick="showCheckout()"> <!-- Checkout button displays final price-->
             <img src="checkout.png" alt="Checkout" class="button-icon">
         </button>
     </div>
 
     <!-- Modal for Final Price Popup -->
-    <div id="checkout-modal" class="modal">
+    <div id="checkout-modal" class="modal"> <!-- Users can close popup and resume pizza making in the case of a misclick -->
         <div class="modal-content">
             <span class="close" onclick="closeCheckout()">&times;</span>
             <h2>Checkout</h2>
