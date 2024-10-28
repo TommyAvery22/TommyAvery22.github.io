@@ -1,14 +1,12 @@
 :root {
-    --primary-bg-color: #ffffff;
-    --text-color: #000000;
-    --main-bg-color: #fdf0d8;
+    --text-color: #141414;
+    --main-bg-color: #FAF3E0;
     --main-text-color: #141414;
-    --main-btn-bg-color: #fff;
+    --btn-interact-text-color: #ffffff;
   }
 
-body {
+body {  
   background-color: var(--main-bg-color);
-  
 }
 
 body,
@@ -16,17 +14,16 @@ h1,
 h2,
 p {
   color: var(--text-color);
-  
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 header { /* Header styling */
   color: var(--main-text-color);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-weight: bolder;
-  font-size: 14px;
+  font-size: 16px;
   padding: 10px 0;
-  margin-bottom: 20px;
+  margin-bottom: 120px;
   letter-spacing: 12px;
   text-align: center;
 }
@@ -35,12 +32,12 @@ h1 {
   font-family: "Rock Salt", cursive;
   font-weight: 500;
   text-align: center;
-  font-size: 36px;
+  font-size: 66px;
 }
 
 h2 {
   font-size: 22px;
-  padding-top: 50px;
+  margin: 80px 0 10px;
   font-weight: bold;
   text-align: center;
 }
@@ -58,11 +55,11 @@ p {
 
 /* Styling for the base size price display */
 .price {
-  font-size: 1.5rem; 
   color: var(--main-text-color); 
   margin: 10px 0; /* Spacing above and below */
-  font-family: 'Koh Santepheap', sans-serif; 
+  font-family: "Roboto", sans-serif;
   text-align: center; 
+  font-weight: 400;
 }
 
 /* Styling for the total price including toppings */
@@ -70,30 +67,35 @@ p {
   font-size: 1.5rem;
   font-weight: bold;
   margin-top: 20px;
-  color: #333;
+  color: var(--main-text-color);
   text-align: center;
 }
 
 /* Size button styling */
 .size-button {
-  /* Width/height will be whatever the size in the buttons class is */
   width: var(--size); 
   height: var(--size);
   display: flex; /* Flexbox for centering text if needed */
-  align-items: center; /* Center vertically */
-  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center numbers vertically */
+  justify-content: center; /* Center numbers horizontally */
   border-radius: 50%; /* Make it circular */
-  background-color: #f5f5f5; /* Background color */
-  margin: 10px; /* Add some space between buttons */
+  background-color: var(--main-bg-color); 
   cursor: pointer; /* Pointer cursor on hover */
   transition: background-color 0.3s; /* Smooth hover transition */
+  border: 4px solid #c29e7e; 
+  font-weight: bolder;
 }
 
-.size-button:hover {
-  background-color: #ece8a5; /* Change background on hover */
+.size-button:hover { /* Change styling on hover */
+  background-color: #7b967c; 
+  color: var(--btn-interact-text-color);
 }
 
-/* Size variations using custom properties */
+.size-button.selected { /* Change styling on click */
+  background-color: #b93742; 
+  color: var(--btn-interact-text-color);
+}
+
 .size-button.twelve {
   --size: 86px;
 }
@@ -111,11 +113,24 @@ p {
 }
 
 /* Trash/Checkout buttons */
+.price-container {
+  display: flex;              /* Use Flexbox for layout */
+  justify-content: space-between;  /* Distribute space between items */
+  align-items: center;       /* Center items vertically */
+  margin: 20px;             /* Add some margin if needed */
+}
+
+.total-price {
+  font-size: 24px;          /* Adjust font size for the total price */
+  font-weight: bold;        /* Make the total price bold */
+  margin: 0 20px;          /* Add margin on sides if needed */
+}
+
 .button-container {
   display: flex;
   justify-content: center; /* Buttons are centred on page */
   align-items: center; /* Buttons are aligned so their centrepoints are inline */
-  gap: 10px; /* Space between buttons */
+  gap: 5px; /* Space between buttons */
 }
 
 .button-container button {
@@ -130,14 +145,10 @@ p {
 }
 
 .centered-image { /* Creates a container for the text so that it can be aligned left but only as far as the width of the image*/
-    max-width: 700px; /* Width of image will not exceed 1000px. The image will be 800px as long as the screen width permits */ 
-    width: 100%; /* Width of image will always fit the width of the webpage in the case of a narrower screen width */ 
-    margin: 0 auto; /* Centres the image */ 
-    display: block;
-}
-
-.topping-thumbnails {
-  width: 10px;
+  max-width: 700px; /* Width of image will not exceed 1000px. The image will be 800px as long as the screen width permits */ 
+  width: 100%; /* Width of image will always fit the width of the webpage in the case of a narrower screen width */ 
+  margin: 0 auto; /* Centres the image */ 
+  display: block;
 }
 
 .topping-item {
@@ -169,13 +180,12 @@ p {
   display: flex;
   gap: 10px; /* Space between thumbnails */
   margin-bottom: 20px; /* Space below thumbnails */
-  justify-content: center; /* Center align if desired */
+  justify-content: center; 
 }
 
 /* Style for each thumbnail image */
 #topping-thumbnails img {
-  width: 50px; /* Small size for thumbnails */
-  height: auto; /* Maintain aspect ratio */
+  height: 60px; /* Small size for thumbnails */
   cursor: pointer; /* Change cursor on hover */
 }
 
@@ -189,7 +199,7 @@ p {
 /* Styles for the pizza dough container */
 #pizza-dough {
   position: relative;
-  width: 700px; /* Adjust width to fit the display */
+  max-width: 700px; /* Adjust width to fit the display */
   margin: 20px auto;
 }
 
@@ -216,12 +226,11 @@ p {
   pointer-events: none; /* Prevent interaction once dropped */
 }
 
-
 #checkout-button {
   display: block;
   margin: 20px auto;
   padding: 10px 20px;
-  background-color: #aa0c7b;
+  background-color: #085f2c;
   color: white;
   border: none;
   border-radius: 5px;
@@ -235,7 +244,7 @@ p {
   height: auto;
 }
 
-/* Modal styles */
+/* Styling for checkout popup */
 .modal {
   display: none; /* Hidden by default */
   position: fixed;
@@ -249,7 +258,7 @@ p {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* Centered vertically */
+  margin: 30% auto; /* Centered vertically */
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Width of the modal */
@@ -271,4 +280,3 @@ p {
   text-decoration: none;
   cursor: pointer;
 }
-

@@ -10,19 +10,21 @@
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
 
+    <!-- Connecting google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&family=Rock+Salt&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Koh+Santepheap:wght@100;300;400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rock+Salt&display=swap" rel="stylesheet">
     
 </head>
 <body>
     <header>COAL OVEN PIZZERIA</header>
 
     <div class="pizza-title">
-        <h1>the 'you' pizza</h1>
+        <h1>The 'anything' pizza</h1>
     </div>
 
-    <h2>size</h2>
+    <h2>Size</h2>
     <div class="button-container">
         <div class="size-button twelve selected" onclick="selectSize(this)" data-price="7.95">12"</div>
         <div class="size-button fourteen" onclick="selectSize(this)" data-price="10.95">14"</div>
@@ -34,7 +36,7 @@
         $<span id="price"></span>
     </div>
 
-    <h2>toppings</h2>
+    <h2>Toppings</h2>
     <p>Build your pizza by dragging and dropping toppings</p>
     <div id="pizza-area">
         <div id="topping-thumbnails">
@@ -99,6 +101,16 @@
                 <div class="topping-price">$1.50</div>
             </div>
             <div class="topping-item">
+                <img src="ingredients/jalapeno-thumbnail.png" 
+                     draggable="true" 
+                     ondragstart="drag(event)" 
+                     data-overlay="toppings/jalapeno-overlay.png" 
+                     data-price="1" 
+                     alt="Jalapenos" 
+                     title="Jalapenos">
+                <div class="topping-price">$1</div>
+            </div>
+            <div class="topping-item">
                 <img src="ingredients/mushroom-thumbnail.png" 
                      draggable="true" 
                      ondragstart="drag(event)" 
@@ -107,6 +119,16 @@
                      alt="Mushroom" 
                      title="Mushroom">
                 <div class="topping-price">$1.50</div>
+            </div>
+            <div class="topping-item">
+                <img src="ingredients/basil-thumbnail.png" 
+                     draggable="true" 
+                     ondragstart="drag(event)" 
+                     data-overlay="toppings/basil-overlay.png" 
+                     data-price="0.50" 
+                     alt="Basil" 
+                     title="Basil">
+                <div class="topping-price">$0.50</div>
             </div>
         </div>
         <div id="pizza-dough" ondrop="drop(event)" ondragover="allowDrop(event)">
@@ -117,13 +139,18 @@
 
     
     <!-- Total price including toppings -->
-    <div id="topping-price-display" class="price">
-        $<span id="total-with-toppings"></span>
-    </div>
- 
-    <div class="button-container">
-        <button id="reset-button" onclick="resetPizza()"><img src="trash.png" alt="Reset" class="button-icon"></button>
-        <button id="checkout-button" onclick="showCheckout()"><img src="checkout.png" alt="Checkout" class="button-icon"></button>
+    <div class="price-container">
+        <button id="reset-button" onclick="resetPizza()">
+            <img src="trash.png" alt="Reset" class="button-icon">
+        </button>
+        
+        <div id="topping-price-display" class="total-price">
+            $<span id="total-with-toppings"></span>
+        </div>
+        
+        <button id="checkout-button" onclick="showCheckout()">
+            <img src="checkout.png" alt="Checkout" class="button-icon">
+        </button>
     </div>
 
     <!-- Modal for Final Price Popup -->
